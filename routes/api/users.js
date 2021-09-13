@@ -8,6 +8,8 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register.js');
 const validateLoginInput = require('../../validation/login');
 
+router.get('/test', (req, res) => res.send("Hi"))
+
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
      
