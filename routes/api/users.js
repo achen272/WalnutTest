@@ -12,7 +12,7 @@ router.get('/test', (req, res) => res.send("Hi"))
 
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
-     
+    debugger
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if(!isValid){

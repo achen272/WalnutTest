@@ -24,26 +24,32 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
-export const signup = user => dispatch => (
-    SessionApiUtil.signup(user).then(() => 
-        dispatch(receiveUserSignIn())
-    ), err => (
-        dispatch(receiveSessionErrors(err.response.data))
+export const signup = user => dispatch => {
+    debugger
+    return (
+        SessionApiUtil.signup(user).then(() => 
+            dispatch(receiveUserSignIn())
+        ), err => (
+            dispatch(receiveSessionErrors(err.response.data))
+        )
     )
-)
+}
 
-export const login = user => dispatch => (
-    SessionApiUtil.login(user).then(res => {
-        const {token} = res.data;
-        localStorage.setItem('jwtToken', token);
-        SessionApiUtil.setAuthToken(token);
-        const decoded = jwt_decode(token);
-        dispatch(receiveCurrentUser(decoded))
-    })
-    .catch(err => {
-        dispatch(receiveSessionErrors(err.response.data))
-    })
-)
+export const login = user => dispatch => {
+    debugger
+    return (
+        SessionApiUtil.login(user).then(res => {
+            const {token} = res.data;
+            localStorage.setItem('jwtToken', token);
+            SessionApiUtil.setAuthToken(token);
+            const decoded = jwt_decode(token);
+            dispatch(receiveCurrentUser(decoded))
+        })
+        .catch(err => {
+            dispatch(receiveSessionErrors(err.response.data))
+        })
+    )
+}
 
 
 export const logout = () => dispatch => {

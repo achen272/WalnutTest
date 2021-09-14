@@ -34,10 +34,10 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         let user = {
-            name = this.state.name,
-            username = this.state.username,
-            password = this.state.password,
-            password2 = this.state.password2
+            name: this.state.name,
+            username: this.state.username,
+            password: this.state.password,
+            password2: this.state.password2
         }
 
         this.props.signup(user, this.props.history);
@@ -46,7 +46,7 @@ class SignupForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((errors, i) => (
+                {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`${i}`}>
                         {this.state.errors[error]}
                     </li>
@@ -62,7 +62,7 @@ class SignupForm extends React.Component {
                     <input type="text"
                         value={this.state.name}
                         onChange={this.update('name')}
-                        placehodler="Name"
+                        placeholder="Name"
                     />
                     <br />
                     <input type="text"
