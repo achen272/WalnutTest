@@ -10,6 +10,7 @@ How to deploy this app:
 6. Run 'npm run dev' to run both the front and back end concurrently.
 
 NOTE:
+
 NPM version used: 6.14.15
 
 NODE version used: 14.17.6
