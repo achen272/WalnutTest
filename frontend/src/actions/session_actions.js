@@ -6,13 +6,14 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_USER_SIGN_IN = 'RECEIVE_USER_SIGN_IN';
 
-export const receiveCurrentUser = currentUSer => ({
+export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
-    currentUSer
+    currentUser
 })
 
-export const receiveUserSignIn = () => ({
-    type: RECEIVE_USER_SIGN_IN
+export const receiveUserSignIn = (currentUser) => ({
+    type: RECEIVE_USER_SIGN_IN,
+    currentUser
 })
 
 export const receiveSessionErrors = errors => ({
@@ -25,18 +26,20 @@ export const logoutUser = () => ({
 });
 
 export const signup = user => dispatch => {
-    debugger
-    return (
-        SessionApiUtil.signup(user).then(() => 
-            dispatch(receiveUserSignIn())
-        ), err => (
+    return(
+        SessionApiUtil.signup(user).then((res) => {
+            const {token} = res.data;
+            localStorage.setItem('jwtToken', token);
+            SessionApiUtil.setAuthToken(token);
+            const decoded = jwt_decode(token);
+            dispatch(receiveCurrentUser(decoded))
+        }, err => (
             dispatch(receiveSessionErrors(err.response.data))
-        )
+        ))
     )
 }
 
 export const login = user => dispatch => {
-    debugger
     return (
         SessionApiUtil.login(user).then(res => {
             const {token} = res.data;
