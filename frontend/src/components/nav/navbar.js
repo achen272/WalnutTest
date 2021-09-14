@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomePage from '../home/home_page';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -16,15 +17,20 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div>
-                    <button onClick={this.logoutUser}>logout</button>
+                <div className="user-logout">
+                    <HomePage user={this.props.user.name} />
+                    <button onClick={this.logoutUser} className="welcome-buttons1">logout</button>
                 </div>
             ) 
         } else {
             return (
-                <div>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
+                <div className="user-buttons">
+                    <Link to={'/signup'} style={{ textDecoration: 'none', color: 'black'}}>
+                        <button className="welcome-buttons1">Signup</button>
+                    </Link>
+                    <Link to={'/login'} style={{ textDecoration: 'none', color: 'black'}}>
+                        <button className="welcome-buttons2">Login</button>
+                    </Link>
                 </div>
             )
         }
@@ -32,8 +38,10 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Walnut Test</h1>
+            <div className="nav-bar">
+                <div className="nav-header">
+                    <Link to={'/'} style={{ textDecoration: 'none'}}><h1 className="nav-title">Walnut</h1></Link>
+                </div>
                 { this.getLinks() }
             </div>
         )

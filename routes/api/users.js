@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
                             }
                         )
                     }else{
-                        return res.status(400).json( {password: "Incorrect Passowrd"} );
+                        return res.status(400).json( {password: "Incorrect Password"} );
                     }
                 })
         })

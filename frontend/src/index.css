@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,112 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.nav-title {
+  text-align: center;
+  padding: 30px 0;
+  color: white;
+  margin: 0 0;
+}
+
+.nav-header {
+  background-color: #b7cfd5;
+}
+
+.user-buttons {
+  margin: auto;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-buttons1, .welcome-buttons2, .submit-button {
+  height: 50px;
+  width: 100px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 2px solid lightgray;
+  background-color: white;
+  color: #7e543c;
+  font-weight: bold;
+}
+
+.welcome-buttons1 {
+  margin-right: 20px;
+}
+
+.welcome-buttons1:hover, .welcome-buttons2:hover, .submit-button:hover {
+  background-color: #c7b0a3;
+;
+  color: white;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.login-form, .signin-form {
+  margin: auto;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #8491a3;
+}
+
+.login-input1, .login-input2,
+.signin-input1, .signin-input2, 
+.signin-input3, .signin-input4 {
+  padding: 10px 40px;
+  text-align: center;
+  border: 2px solid #8491a3;
+  border-radius: 5px;
+  color: #a36c22;
+  font-size: 18px;
+}
+
+.login-input1, .signin-input1, .signin-input2, 
+.signin-input3 {
+  margin-bottom: 10px;
+}
+
+.login-input1:hover, .login-input2:hover, 
+.signin-input1:hover, .signin-input2:hover, 
+.signin-input3:hover, .signin-input4:hover {
+  border: 2px solid #c7b0a3;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.submit-button {
+  margin: 20px 0px;
+  margin-left: 100px;
+}
+
+.form-header {
+  text-align: center;
+  font-size: 30px;
+  color: #8491a3;
+}
+
+.form-errors-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.form-errors {
+  color: #7e543c;
+  font-weight: bold;
+}
+
+.user-logout {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

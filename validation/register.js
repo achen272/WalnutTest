@@ -19,7 +19,7 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if (!Validator.isLength(data.username, { min: 6, max: 30 })) {
-        errors.username = "Username must be between 6 and 30 characters";
+        errors.username = "Username must be more than 6 characters";
     }
 
     if (Validator.isEmpty(data.username)){
@@ -31,7 +31,7 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-        errors.password = "Password must be between 6 and 30 characters";
+        errors.password = "Password must be more than 6 characters";
     }
 
     if(Validator.isEmpty(data.password2)){

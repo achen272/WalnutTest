@@ -45,9 +45,9 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="form-errors-list">
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`${i}`}>
+                    <li key={`${i}`} className="form-errors">
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -57,34 +57,39 @@ class SignupForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="signin-form">
                 <form onSubmit={this.handleSubmit}>
+                    <h2 className="form-header"> SIGN IN </h2>
                     <input type="text"
                         value={this.state.name}
                         onChange={this.update('name')}
                         placeholder="Name"
+                        className="signin-input1"
                     />
                     <br />
                     <input type="text"
                         value={this.state.username}
                         onChange={this.update('username')}
                         placeholder="Username"
+                        className="signin-input2"
                     />
                     <br />
                     <input type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
                         placeholder="Password"
+                        className="signin-input3"
                     />
                     <br />
                     <input type="password"
                         value={this.state.password2}
                         onChange={this.update('password2')}
                         placeholder="Confirm Password"
+                        className="signin-input4"
                     />
                     <br />
                     {this.renderErrors()}
-                    <button onClick={this.handleSubmit}>Submit</button>
+                    <button onClick={this.handleSubmit} className="submit-button">Submit</button>
                 </form>
             </div>
         )

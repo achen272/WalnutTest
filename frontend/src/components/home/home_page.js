@@ -1,13 +1,13 @@
 import React from 'react';
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return(
             <div>
-                <h1>Walnut Test</h1>
-                <footer>
-                    By Monica Liang Zheng
-                </footer>
+                <h1 className="form-header">Welcome, {this.props.user}</h1>
             </div>
         )
     }
