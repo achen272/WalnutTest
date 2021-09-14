@@ -14,3 +14,5 @@ NOTE:
 NPM version used: 6.14.15
 
 NODE version used: 14.17.6
+
+For those who don't have NodeJS in their systems, to download the latest version of npm, run: 'npm install -g npm'. Then run 'node -v' and 'npm -v' to make sure it is properly installed and the versions are shown.
